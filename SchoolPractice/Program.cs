@@ -6,7 +6,7 @@ namespace SchoolPractice
     {
         public static void Main(string[] args)
         {
-            // TODO: Instantiate your objects and test your exercise solutions with print statements here.
+            Student newStudent = new Student("Donna Seidel", 00000027, 1, 4.0)
         }
     }
 }

@@ -7,9 +7,25 @@ namespace SchoolPractice
 {
     public class Student
     {
-        private string Name;
-        private int StudentId;
-        private int NumberOfCredits;
-        private double Gpa;
+        public string Name { get; set; }
+        public int StudentId { get; set; }
+        public int NumberOfCredits { get; set; }
+        public double Gpa { get; set; }
+
+        //constructor for x-fer students with credits and gpa
+        public Student(string name, int studentId, int numberOfCredits, double gpa)
+        {
+            Name = name;
+            StudentId = studentId;
+            NumberOfCredits = numberOfCredits;
+            Gpa = gpa;
+        }
+
+        //default constructor for NEW students with nothing to transfer
+        public Student(string name, int studentId) : this(name, studentId, 0, 0.0) { }
+
     }
+
+
+}
 }
