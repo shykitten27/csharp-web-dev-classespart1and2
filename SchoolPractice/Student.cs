@@ -1,16 +1,13 @@
 ﻿using System;
 
-// Start working here with your Student class.
-// To instantiate the Student class, add your code to the Main method in Program
-
 namespace SchoolPractice
 {
     public class Student
     {
-        public string Name { get; set; }
-        public int StudentId { get; set; }
-        public int NumberOfCredits { get; set; }
-        public double Gpa { get; set; }
+        private string Name { get; set; }
+        private int StudentId { get; set; }
+        private int NumberOfCredits { get; set; }
+        private double Gpa { get; set; }
 
         //constructor for x-fer students with credits and gpa
         public Student(string name, int studentId, int numberOfCredits, double gpa)
@@ -23,9 +20,5 @@ namespace SchoolPractice
 
         //default constructor for NEW students with nothing to transfer
         public Student(string name, int studentId) : this(name, studentId, 0, 0.0) { }
-
     }
-
-
-}
 }
