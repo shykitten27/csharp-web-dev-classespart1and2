@@ -20,5 +20,23 @@ namespace SchoolPractice
 
         //default constructor for NEW students with nothing to transfer
         public Student(string name, int studentId) : this(name, studentId, 0, 0.0) { }
-    }
-}
+
+        public static string GetGradeLevel(int numberOfCredits)
+        {
+            if(numberOfCredits <= 29)
+            {
+                return "Freshman";
+            }
+            else if (numberOfCredits > 29 && numberOfCredits <=59)
+            {
+                return "Sophomore";
+            }
+            else if(numberOfCredits > 60 && numberOfCredits <=89)
+            {
+                return "Junior";
+            }
+            else
+            {
+                return "Senior";
+            }
+        }
