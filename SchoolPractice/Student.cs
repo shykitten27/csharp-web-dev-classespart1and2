@@ -23,15 +23,22 @@ namespace SchoolPractice
 
         public static string GetGradeLevel(int numberOfCredits)
         {
-            if(numberOfCredits <= 29)
+            //no need to test for numeric as int passed?
+            //do need to test for negative int?
+            if (numberOfCredits < 0) 
+            {
+                Console.WriteLine("Invalid number of credits - must be positive.");
+                return ""; //send back empty string
+            }
+             else if (numberOfCredits >= 0 && numberOfCredits <= 29)
             {
                 return "Freshman";
             }
-            else if (numberOfCredits > 29 && numberOfCredits <=59)
+            else if (numberOfCredits > 29 && numberOfCredits <= 59)
             {
                 return "Sophomore";
             }
-            else if(numberOfCredits > 60 && numberOfCredits <=89)
+            else if (numberOfCredits > 60 && numberOfCredits <= 89)
             {
                 return "Junior";
             }
@@ -40,3 +47,17 @@ namespace SchoolPractice
                 return "Senior";
             }
         }
+
+        public double AddGrade(int coureseCredits, double courseGrade)
+        {
+            //add a course grade and update the gpa
+            double qualityScore = courseGrade * coureseCredits;
+
+            
+
+
+
+            return Gpa;
+        }
+    }
+}
