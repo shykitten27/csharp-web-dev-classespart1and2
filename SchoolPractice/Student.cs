@@ -50,14 +50,42 @@ namespace SchoolPractice
 
         public double AddGrade(int coureseCredits, double courseGrade)
         {
-            //add a course grade and update the gpa
-            double qualityScore = courseGrade * coureseCredits;
+            //test for courseCredits > 0 (what would be the point?)
+            //test for courseGrade >= 0 && <= 4.0 (no weighted grading)
+            if (courseGrade >= 0.0 && courseGrade < 4.0)
+            {
+                Console.WriteLine("Invalid course grade - must be between 0.0 and 4.0.");
+                return Gpa;
+            }
+            else
+            {
+                double currentTotalQualityScore = coureseCredits * courseGrade;
+                double totalQualityScore = currentTotalQualityScore + Gpa;
+                NumberOfCredits += coureseCredits;
+                return Gpa = totalQualityScore / NumberOfCredits;
+            }
+        }
 
-            
+        public override boolean Equals(object toBeCompared)
+        {
 
+            if (toBeCompared.GetType() != this.GetType())
+            {
+                return false;
+            }
 
+            Student s = toBeCompared as Student;
+            return s.StudentId == StudentId;
+        }
 
-            return Gpa;
+        public override string ToString()
+        {
+            return Name + " (Credits: " + NumberOfCredits + ", GPA: " + Gpa + ")";
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Name, StudentId, NumberOfCredits, Gpa);
         }
     }
 }
